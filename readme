@@ -1,51 +1,16 @@
 # 🎯 Demonstração Interativa - Tags HTML
 
-> Este repositório tem o intuito de resumir as aulas do dev em dobro com exemplos práticos.
+> Resumo das aulas do Dev em Dobro com exemplos práticos e interativos.
 
-## 📋 Sobre o Projeto
+## 🚀 Links
 
-Este projeto é uma demonstração interativa e visual das principais tags HTML usadas para criar formulários e capturar dados do usuário. Cada exemplo inclui código, explicação e feedback em tempo real!
+- **[Ver Demonstração ao Vivo](https://pavaliek.github.io/Tipos_tag_HTML/)** - Teste todas as tags na prática
+- **[Documentação Visual](https://pavaliek.github.io/Tipos_tag_HTML/sobre.html)** - Guia completo ilustrado
 
-## 🚀 Acesse o Projeto
+## 📚 Conteúdo
 
-🔗 **[Ver Demonstração ao Vivo](https://pavaliek.github.io/Tipos_tag_HTML/)**
+Exemplos interativos de: `<input>`, `<select>`, `<textarea>` e atributos `id`, `placeholder`, `required`, `disabled` e mais.
 
-🔗 **[Ver Documentação Visual](https://pavaliek.github.io/Tipos_tag_HTML/sobre.html)**
+---
 
-## 🏷️ Tags Abordadas
-
-### 1️⃣ Input
-A tag `<input>` cria campos de entrada de dados.
-
-**Tipos:** text, email, password, number, checkbox, radio
-
-### 2️⃣ ID
-O atributo `id` identifica elementos únicos.
-
-### 3️⃣ Placeholder  
-Texto de dica que desaparece ao digitar.
-
-### 4️⃣ Select
-Menu dropdown para listas de opções.
-
-### 5️⃣ Textarea
-Campo de texto multilinha.
-
-## 💡 Recursos
-
-✨ Feedback em tempo real  
-📊 Estatísticas dinâmicas  
-🎨 Design moderno  
-📱 100% Responsivo
-
-## 🛠️ Tecnologias
-
-- HTML5
-- CSS3  
-- JavaScript
-
-## 👩‍💻 Autora
-
-Desenvolvido com 💜 por [pavaliek](https://github.com/pavaliek)
-
-📚 Parte do curso Dev em Dobro
+💜 Desenvolvido por [pavaliek](https://github.com/pavaliek) | 📚 Dev em Dobro
