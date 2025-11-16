@@ -8,4 +8,5 @@ Documentação Visual - Guia completo ilustrado
 📚 Conteúdo
 Exemplos interativos de: <input>, <select>, <textarea> e atributos id, placeholder, required, disabled e mais.
 
-💜 Desenvolvido por Gabriela Leonel | 📚 Dev em Dobro
+💜 Desenvolvido por 
+Gabriela Leonel | 📚 Dev em Dobro
