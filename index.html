@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inputs Interativos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .input-demo {
+            background: #f8f9ff;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+        }
+
+        .input-demo h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .code-display {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            margin-bottom: 15px;
+            overflow-x: auto;
+        }
+
+        .code-display .tag { color: #ff79c6; }
+        .code-display .attr { color: #50fa7b; }
+        .code-display .value { color: #f1fa8c; }
+
+        input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .info-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #856404;
+        }
+
+        .output-display {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            min-height: 50px;
+        }
+
+        .output-display p {
+            color: #2e7d32;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .output-display span {
+            color: #1b5e20;
+            font-family: monospace;
+        }
+
+        .checkbox-group, .radio-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .checkbox-group label, .radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .checkbox-group input, .radio-group input {
+            width: auto;
+            margin: 0;
+            cursor: pointer;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Demonstração Interativa</h1>
+        <p class="subtitle">Explore input, id e placeholder na prática!</p>
+
+        <!-- Exemplo 1: Text Input -->
+        <div class="input-demo">
+            <h3>1. Input de Texto <span class="badge">type="text"</span></h3>
+            <div class="code-display">
+&lt;<span class="tag">input</span> <span class="attr">type</span>=<span class="value">"text"</span> <span class="attr">id</span>=<span class="value">"nome"</span> <span class="attr">placeholder</span>=<span class="value">"Digite seu nome completo"</span>&gt;
+            </div>
+            <input type="text" id="nome" placeholder="Digite seu nome completo">
+            <div class="info-box">
+                💡 <strong>id="nome"</strong> identifica este campo unicamente. <strong>placeholder</strong> mostra a dica que desaparece ao digitar.
+            </div>
+            <div class="output-display" id="output-nome">
+                <p>Valor digitado:</p>
+                <span id="valor-nome">Nada ainda...</span>
+            </div>
+        </div>
+
+        <!-- Exemplo 2: Email Input -->
+        <div class="input-demo">
+            <h3>2. Input de Email <span class="badge">type="email"</span></h3>
+            <div class="code-display">
+&lt;<span class="tag">input</span> <span class="attr">type</span>=<span class="value">"email"</span> <span class="attr">id</span>=<span class="value">"email"</span> <span class="attr">placeholder</span>=<span class="value">"seuemail@exemplo.com"</span>&gt;
+            </div>
+            <input type="email" id="email" placeholder="seuemail@exemplo.com">
+            <div class="info-box">
+                💡 Valida automaticamente se é um email válido (precisa ter @)
+            </div>
+            <div class="output-display" id="output-email">
+                <p>Email digitado:</p>
+                <span id="valor-email">Nada ainda...</span>
+            </div>
+        </div>
+
+        <!-- Exemplo 3: Password Input -->
+        <div class="input-demo">
+            <h3>3. Input de Senha <span class="badge">type="password"</span></h3>
+            <div class="code-display">
+&lt;<span class="tag">input</span> <span class="attr">type</span>=<span class="value">"password"</span> <span class="attr">id</span>=<span class="value">"senha"</span> <span class="attr">placeholder</span>=<span class="value">"Mínimo 6 caracteres"</span>&gt;
+            </div>
+            <input type="password" id="senha" placeholder="Mínimo 6 caracteres">
+            <div class="info-box">
+                💡 Oculta os caracteres digitados automaticamente (••••••)
+            </div>
+            <div class="output-display" id="output-senha">
+                <p>Quantidade de caracteres:</p>
+                <span id="valor-senha">0</span>
+            </div>
+        </div>
+
+        <!-- Exemplo 4: Number Input -->
+        <div class="input-demo">
+            <h3>4. Input Numérico <span class="badge">type="number"</span></h3>
+            <div class="code-display">
+&lt;<span class="tag">input</span> <span class="attr">type</span>=<span class="value">"number"</span> <span class="attr">id</span>=<span class="value">"idade"</span> <span class="attr">placeholder</span>=<span class="value">"Sua idade"</span>&gt;
+            </div>
+            <input type="number" id="idade" placeholder="Sua idade" min="0" max="120">
+            <div class="info-box">
+                💡 Aceita apenas números e mostra setas para aumentar/diminuir
+            </div>
+            <div class="output-display" id="output-idade">
+                <p>Idade informada:</p>
+                <span id="valor-idade">Nada ainda...</span>
+            </div>
+        </div>
+
+        <!-- Exemplo 5: Checkbox -->
+        <div class="input-demo">
+            <h3>5. Checkbox <span class="badge">type="checkbox"</span></h3>
+            <div class="code-display">
+&lt;<span class="tag">input</span> <span class="attr">type</span>=<span class="value">"checkbox"</span> <span class="attr">id</span>=<span class="value">"aceito"</span>&gt;
+            </div>
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox" id="aceito">
+                    Aceito os termos e condições
+                </label>
+                <label>
+                    <input type="checkbox" id="newsletter">
+                    Quero receber novidades
+                </label>
+            </div>
+            <div class="info-box">
+                💡 Checkbox não usa placeholder. Serve para marcar opções (pode marcar várias)
+            </div>
+            <div class="output-display" id="output-checkbox">
+                <p>Status:</p>
+                <span id="valor-checkbox">Nenhuma opção marcada</span>
+            </div>
+        </div>
+
+        <!-- Exemplo 6: Radio -->
+        <div class="input-demo">
+            <h3>6. Radio Button <span class="badge">type="radio"</span></h3>
+            <div class="code-display">
+&lt;<span class="tag">input</span> <span class="attr">type</span>=<span class="value">"radio"</span> <span class="attr">name</span>=<span class="value">"cor"</span> <span class="attr">id</span>=<span class="value">"azul"</span>&gt;
+            </div>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="cor" id="azul" value="azul">
+                    Azul
+                </label>
+                <label>
+                    <input type="radio" name="cor" id="verde" value="verde">
+                    Verde
+                </label>
+                <label>
+                    <input type="radio" name="cor" id="roxo" value="roxo">
+                    Roxo
+                </label>
+            </div>
+            <div class="info-box">
+                💡 Radio permite escolher apenas UMA opção do grupo (use o mesmo "name")
+            </div>
+            <div class="output-display" id="output-radio">
+                <p>Cor escolhida:</p>
+                <span id="valor-radio">Nenhuma</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Atualizar valor do nome
+        document.getElementById('nome').addEventListener('input', function(e) {
+            document.getElementById('valor-nome').textContent = e.target.value || 'Nada ainda...';
+        });
+
+        // Atualizar valor do email
+        document.getElementById('email').addEventListener('input', function(e) {
+            document.getElementById('valor-email').textContent = e.target.value || 'Nada ainda...';
+        });
+
+        // Atualizar comprimento da senha
+        document.getElementById('senha').addEventListener('input', function(e) {
+            document.getElementById('valor-senha').textContent = e.target.value.length + ' caracteres';
+        });
+
+        // Atualizar idade
+        document.getElementById('idade').addEventListener('input', function(e) {
+            document.getElementById('valor-idade').textContent = e.target.value ? e.target.value + ' anos' : 'Nada ainda...';
+        });
+
+        // Atualizar checkboxes
+        function atualizarCheckboxes() {
+            const aceito = document.getElementById('aceito').checked;
+            const newsletter = document.getElementById('newsletter').checked;
+            let texto = [];
+            if (aceito) texto.push('Termos aceitos');
+            if (newsletter) texto.push('Newsletter ativada');
+            document.getElementById('valor-checkbox').textContent = texto.length ? texto.join(', ') : 'Nenhuma opção marcada';
+        }
+        document.getElementById('aceito').addEventListener('change', atualizarCheckboxes);
+        document.getElementById('newsletter').addEventListener('change', atualizarCheckboxes);
+
+        // Atualizar radio buttons
+        document.querySelectorAll('input[name="cor"]').forEach(radio => {
+            radio.addEventListener('change', function(e) {
+                document.getElementById('valor-radio').textContent = e.target.value;
+            });
+        });
+    </script>
+</body>
+</html>
