@@ -6,7 +6,7 @@ Ver Demonstração ao Vivo - Teste todas as tags na prática
 Documentação Visual - Guia completo ilustrado
 
 📚 Conteúdo
-Exemplos interativos de: <input>, <select>, <textarea> e atributos id, placeholder, required, disabled e mais.
+Exemplos interativos de: input, select, textareae atributos id, placeholder, required, disabled e mais.
 
-💜 Desenvolvido por 
-Gabriela Leonel | 📚 Dev em Dobro
+
+💜 Desenvolvido por Gabriela Leonel | 📚 Dev em Dobro
